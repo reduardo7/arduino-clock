@@ -7,6 +7,7 @@ void setup() {
   Serial.begin(9600);
 
   Runnable::setupAll();
+  Lcd::setup();
   Main::setup();
 
   Serial.println("Ready");
