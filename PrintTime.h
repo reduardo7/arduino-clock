@@ -1,9 +1,10 @@
-#ifndef PRINT_TIME
-#define PRINT_TIME
+#ifndef MODULE_PRINT_TIME
+#define MODULE_PRINT_TIME
 
 #include "Arduino.h"
 #include "Lcd.h"
 #include "Rtc.h"
+#include "Utils.h"
 #include <Lib_Interval.h>
 
 class PrintTime: public Runnable {
@@ -30,17 +31,18 @@ class PrintTime: public Runnable {
         Serial.println(Rtc.seconds);
 
         Lcd::print(
-            String(Rtc.dayofmonth)
+            digitPad(Rtc.dayofmonth)
           + "/"
-          + String(Rtc.month)
+          + digitPad(Rtc.month)
           + "/"
           + String(Rtc.year)
         ,
-            String(Rtc.hours)
+            " "
+          + digitPad(Rtc.hours)
           + ":"
-          + String(Rtc.minutes)
+          + digitPad(Rtc.minutes)
           + ":"
-          + String(Rtc.seconds)
+          + digitPad(Rtc.seconds)
         );
       }        
     }

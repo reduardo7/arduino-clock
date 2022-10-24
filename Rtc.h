@@ -1,5 +1,5 @@
-#ifndef RTC
-#define RTC
+#ifndef MODULE_RTC
+#define MODULE_RTC
 
 #include "Arduino.h"
 #include <virtuabotixRTC.h>
