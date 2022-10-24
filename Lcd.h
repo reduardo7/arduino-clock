@@ -24,11 +24,13 @@ class Lcd {
 
     static void setup() {
       _lcd.begin(LCD_COLS, LCD_ROWS);
-      print("Ready!", "Arduino");
+      print("LCD Ready!", "Arduino");
       delay(3000);
     }
 
     static void print(String s1, String s2) {
+      Serial.print("LCD1: "); Serial.println(s1);
+      Serial.print("LCD2: "); Serial.println(s2);
       _lcd.clear();
       _lcd.setCursor(0, 0);
       _lcd.print(s1);
