@@ -5,7 +5,6 @@
 #include "Lcd.h"
 #include "Rtc.h"
 #include "PrintTime.h"
-#include "Utils.h"
 #include <Component_Button.h>
 
 const int16_t PIN_BTN_SET_TIME = 2;

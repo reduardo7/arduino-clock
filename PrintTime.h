@@ -7,6 +7,8 @@
 #include "Utils.h"
 #include <Lib_Interval.h>
 
+Lcd lcd;
+
 class PrintTime: public Runnable {
   private:
     Interval interval;
@@ -30,7 +32,7 @@ class PrintTime: public Runnable {
         Serial.print(":");
         Serial.println(Rtc.seconds);
 
-        Lcd::print(
+        lcd.print(
             digitPad(Rtc.dayofmonth)
           + "/"
           + digitPad(Rtc.month)
@@ -53,7 +55,7 @@ class PrintTime: public Runnable {
       {}
 };
 
-// Init
+// Init - Create an instance and keep it working in paralell
 PrintTime _printTime;
 
 #endif
