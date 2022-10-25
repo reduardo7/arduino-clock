@@ -20,17 +20,17 @@ class PrintTime: public Runnable {
       if (this->interval.onStep()) {
         Rtc.updateTime();
         Serial.print("Time: ");
-        Serial.print(Rtc.dayofmonth);
+        Serial.print(digitPad(Rtc.dayofmonth));
         Serial.print("/");
-        Serial.print(Rtc.month);
+        Serial.print(digitPad(Rtc.month));
         Serial.print("/");
         Serial.print(Rtc.year);
         Serial.print(" ");
-        Serial.print(Rtc.hours);
+        Serial.print(digitPad(Rtc.hours));
         Serial.print(":");
-        Serial.print(Rtc.minutes);
+        Serial.print(digitPad(Rtc.minutes));
         Serial.print(":");
-        Serial.println(Rtc.seconds);
+        Serial.println(digitPad(Rtc.seconds));
 
         lcd.print(
             digitPad(Rtc.dayofmonth)

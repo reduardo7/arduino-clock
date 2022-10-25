@@ -4,10 +4,9 @@
 #include "Arduino.h"
 #include <virtuabotixRTC.h>
 
-const int16_t
-  PIN_RTC_CLK = 6,
-  PIN_RTC_DAT = 7,
-  PIN_RTC_RESET = 8;
+#define PIN_RTC_CLK 6
+#define PIN_RTC_DAT 7
+#define PIN_RTC_RESET 8
 
 virtuabotixRTC Rtc(
   PIN_RTC_CLK,

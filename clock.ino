@@ -1,8 +1,5 @@
 #include "Main.h"
 
-// https://eloctavobit.com/arduino/real-time-clock-rtc-ds1302-modulo-reloj/
-// https://github.com/chrisfryer78/ArduinoRTClibrary
-
 void setup() {
   Serial.begin(9600);
 

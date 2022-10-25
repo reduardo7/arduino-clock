@@ -6,17 +6,15 @@
 #include <App_Runnable.h>
 #include <LiquidCrystal.h>
 
-const int16_t
-  PIN_LCD_RS = 5,
-  PIN_LCD_EN = 12,
-  PIN_LCD_D4 = 10,
-  PIN_LCD_D5 = 9,
-  PIN_LCD_D6 = 3,
-  PIN_LCD_D7 = 11;
-  
-const int
-  LCD_COLS = 16,
-  LCD_ROWS = 2;
+#define PIN_LCD_RS 5
+#define PIN_LCD_EN 13
+#define PIN_LCD_D4 10
+#define PIN_LCD_D5 9
+#define PIN_LCD_D6 3
+#define PIN_LCD_D7 12
+
+#define LCD_COLS 16
+#define LCD_ROWS 2
 
 class Lcd: public Runnable {
   private:
@@ -25,7 +23,7 @@ class Lcd: public Runnable {
   protected:
     void onSetup() {
       this->_lcd.begin(LCD_COLS, LCD_ROWS);
-      print("LCD Ready", "Arduino");
+      print("LCD Ready", "Edu Cuomo");
     }
 
   public:
@@ -43,8 +41,8 @@ class Lcd: public Runnable {
     LiquidCrystal getLcd() { return this->_lcd; }
 
     void print(String s1, String s2) {
-      Serial.print("LCD1: "); Serial.println(s1);
-      Serial.print("LCD2: "); Serial.println(s2);
+      // Serial.print("LCD1: "); Serial.println(s1);
+      // Serial.print("LCD2: "); Serial.println(s2);
       // this->_lcd.clear();
       this->_lcd.setCursor(0, 0);
       this->_lcd.print(s1);
